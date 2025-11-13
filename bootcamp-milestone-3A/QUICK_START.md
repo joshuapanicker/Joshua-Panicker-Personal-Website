@@ -12,7 +12,7 @@
 
 ## Step 2: Create .env.local File
 
-In the `bootcamp-milestone-3` folder, create a file named `.env.local`:
+In the `bootcamp-milestone-3A` folder, create a file named `.env.local`:
 
 ```bash
 MONGO_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/test?retryWrites=true&w=majority
@@ -110,7 +110,7 @@ Replace:
 ## Step 4: Start the Development Server
 
 ```bash
-cd bootcamp-milestone-3
+cd bootcamp-milestone-3A
 npm run dev
 ```
 
@@ -173,5 +173,5 @@ npm run dev
 - Fetches from MongoDB database
 - Has comments feature
 - API endpoints available
-- Run: `cd bootcamp-milestone-3 && npm run dev`
+- Run: `cd bootcamp-milestone-3AA && npm run dev`
 
