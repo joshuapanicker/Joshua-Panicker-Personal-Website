@@ -62,8 +62,9 @@ This is **completely normal** for free tier MongoDB Atlas clusters. The cluster 
 
 1. **Check your connection string** in `.env.local`:
    ```
-   MONGO_URI=mongodb+srv://joshuapanicker_db_user:Av1%40l%40ndB%40c0n@cluster0.z6a0bbv.mongodb.net/test?retryWrites=true&w=majority
+   MONGO_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/test?retryWrites=true&w=majority
    ```
+   Replace `YOUR_USERNAME` and `YOUR_PASSWORD` with your actual credentials.
 
 2. **Check the terminal** where `npm run dev` is running - look for error messages
 

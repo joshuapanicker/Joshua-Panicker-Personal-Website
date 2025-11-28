@@ -41,8 +41,10 @@ You have two options:
 
 Make sure your `.env.local` file has the correct connection string:
 ```
-MONGO_URI=mongodb+srv://joshuapanicker_db_user:Av1%40l%40ndB%40c0n@cluster0.z6a0bbv.mongodb.net/test?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/test?retryWrites=true&w=majority
 ```
+
+**Important:** Replace `YOUR_USERNAME` and `YOUR_PASSWORD` with your actual MongoDB credentials. Make sure to URL-encode special characters in your password (e.g., `@` becomes `%40`).
 
 ## Still Having Issues?
 
