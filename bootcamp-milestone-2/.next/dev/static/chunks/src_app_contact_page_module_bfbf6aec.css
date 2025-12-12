@@ -1,0 +1,64 @@
+/* [project]/src/app/contact/page.module.css [app-client] (css) */
+main {
+  animation: 1s ease-out page-module__OSLHOG__slideUp;
+}
+
+@keyframes page-module__OSLHOG__slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-module__OSLHOG__contactTitle {
+  color: #fff;
+  text-shadow: -1px -1px #8b5cf6, 1px -1px #8b5cf6, -1px 1px #8b5cf6, 1px 1px #8b5cf6, 0 0 3px #8b5cf6;
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 700;
+}
+
+label {
+  color: #fff;
+  margin-bottom: 8px;
+  font-family: Georgia;
+  font-weight: bold;
+  display: block;
+}
+
+:is(input[type="text"], input[type="email"], textarea) {
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: var(--cg-black);
+  color: var(--cg-white);
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-weight: bold;
+  transition: background-color .3s;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--cg-blue);
+}
+
+.page-module__OSLHOG__contactForm {
+  width: 500px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=src_app_contact_page_module_bfbf6aec.css.map*/

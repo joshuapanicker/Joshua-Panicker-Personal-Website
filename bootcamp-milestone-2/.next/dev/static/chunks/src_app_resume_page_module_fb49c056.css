@@ -1,0 +1,259 @@
+/* [project]/src/app/resume/page.module.css [app-client] (css) */
+main {
+  animation: 1s ease-out page-module__MTaWIq__slideUp;
+}
+
+@keyframes page-module__MTaWIq__slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-module__MTaWIq__heroSection {
+  text-align: center;
+  width: 100%;
+}
+
+.page-module__MTaWIq__resumeTitle {
+  text-shadow: -1px -1px #8b5cf6, 1px -1px #8b5cf6, -1px 1px #8b5cf6, 1px 1px #8b5cf6, 0 0 3px #8b5cf6;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #fff !important;
+}
+
+.page-module__MTaWIq__titleHighlight {
+  color: #fff;
+  text-shadow: -1px -1px #8b5cf6, 1px -1px #8b5cf6, -1px 1px #8b5cf6, 1px 1px #8b5cf6, 0 0 3px #8b5cf6;
+}
+
+.page-module__MTaWIq__downloadResumeBtn {
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(45deg, #8b5cf6, #6366f1);
+  border: 2px solid #a78bfa;
+  border-radius: 8px;
+  margin: 0 auto 3rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s;
+  box-shadow: 0 4px 15px #8b5cf64d;
+  display: inline-block !important;
+}
+
+.page-module__MTaWIq__downloadResumeBtn:hover {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  border: 2px solid #c4b5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #8b5cf666, 0 0 20px #a78bfa99;
+}
+
+.page-module__MTaWIq__resumeTabs {
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: .5rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  padding: .5rem;
+  overflow-x: auto;
+  display: flex !important;
+}
+
+.page-module__MTaWIq__tabBtn {
+  color: #fff;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  white-space: nowrap;
+  background: #ffffff1a;
+  border: 2px solid #fff3;
+  border-radius: 8px;
+  flex-shrink: 0;
+  min-width: 80px;
+  height: auto;
+  padding: .6rem 1.2rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+  font-size: .85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  display: inline-block !important;
+}
+
+.page-module__MTaWIq__tabBtn:before {
+  content: "";
+  background: linear-gradient(90deg, #0000, #fff3, #0000);
+  width: 100%;
+  height: 100%;
+  transition: left .5s;
+  position: absolute;
+  top: 0;
+  left: -100%;
+}
+
+.page-module__MTaWIq__tabBtn:hover:before {
+  left: 100%;
+}
+
+.page-module__MTaWIq__tabBtn:hover {
+  background: linear-gradient(45deg, #8b5cf6, #6366f1);
+  border-color: #8b5cf6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px #8b5cf64d;
+}
+
+.page-module__MTaWIq__resumeSection {
+  clear: both;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-module__MTaWIq__resumeCard {
+  background: #ffffff0d;
+  border: 1px solid #ffffff1a;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  transition: all .3s;
+}
+
+.page-module__MTaWIq__resumeCard:hover {
+  background: #ffffff14;
+  transform: translateY(-2px);
+}
+
+.page-module__MTaWIq__cardTitle {
+  color: #fff;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.page-module__MTaWIq__cardSubtitle {
+  color: #e5e7eb;
+  margin-bottom: .3rem;
+  font-size: .9rem;
+}
+
+.page-module__MTaWIq__cardDate {
+  color: #a78bfa;
+  margin-bottom: 1rem;
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+.page-module__MTaWIq__cardDescription {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.page-module__MTaWIq__sectionTitle {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.page-module__MTaWIq__skillsContainer {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+  display: grid;
+}
+
+.page-module__MTaWIq__skillCategory {
+  background: #ffffff0d;
+  border: 1px solid #ffffff1a;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.page-module__MTaWIq__categoryTitle {
+  color: #a78bfa;
+  text-align: left;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.page-module__MTaWIq__skillTags {
+  flex-wrap: wrap;
+  gap: .5rem;
+  display: flex;
+}
+
+.page-module__MTaWIq__skillTag {
+  color: #fff;
+  background: linear-gradient(45deg, #8b5cf6, #6366f1);
+  border-radius: 15px;
+  padding: .4rem .8rem;
+  font-size: .8rem;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+.page-module__MTaWIq__skillTag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #8b5cf64d;
+}
+
+.page-module__MTaWIq__projectLink {
+  color: #fff;
+  background: linear-gradient(45deg, #8b5cf6, #6366f1);
+  border-radius: 6px;
+  margin-top: 1rem;
+  padding: .6rem 1.2rem;
+  font-size: .8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-block;
+}
+
+.page-module__MTaWIq__projectLink:hover {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #8b5cf64d;
+}
+
+.page-module__MTaWIq__courseworkSection {
+  margin-bottom: 2rem;
+}
+
+.page-module__MTaWIq__courseList {
+  flex-direction: column;
+  gap: .8rem;
+  display: flex;
+}
+
+.page-module__MTaWIq__courseItem {
+  color: #e5e7eb;
+  background: #ffffff0d;
+  border: 1px solid #ffffff1a;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all .3s;
+}
+
+.page-module__MTaWIq__courseItem:hover {
+  background: #ffffff14;
+  transform: translateX(5px);
+}
+
+/*# sourceMappingURL=src_app_resume_page_module_fb49c056.css.map*/

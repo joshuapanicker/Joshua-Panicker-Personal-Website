@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/blog/page.module.css"],"sourcesContent":[":global(main) {\n  animation: slideUp 1s ease-out;\n}\n\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n\n.blogTitle {\n  color: white;\n  text-shadow: -1px -1px 0 #8b5cf6, 1px -1px 0 #8b5cf6, -1px 1px 0 #8b5cf6,\n    1px 1px 0 #8b5cf6, 0 0 3px #8b5cf6;\n  font-weight: 700;\n  text-align: center;\n  margin: 2rem 0;\n  font-size: 2.5rem;\n}\n\n.blogContainer {\n  max-width: 800px;\n  margin: 2rem auto;\n  padding: 0 2rem;\n  display: flex;\n  flex-direction: column;\n  gap: 2rem;\n}\n\n"],"names":[],"mappings":"AAAA;;;;AAIA;;;;;;;;;;;;AAWA;;;;;;;;;AAUA"}}]
+}

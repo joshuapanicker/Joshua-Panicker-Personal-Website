@@ -17,7 +17,18 @@ async function getBlog(slug: string) {
 
   try {
     const blog = await Blog.findOne({ slug }).orFail();
-    return blog;
+    // Convert Mongoose document to plain object for client component serialization
+    const blogObj = blog.toObject();
+    // Ensure comments are properly serialized
+    const serializedComments = (blogObj.comments || []).map((comment: any) => ({
+      user: comment.user,
+      comment: comment.comment,
+      time: comment.time instanceof Date ? comment.time.toISOString() : comment.time,
+    }));
+    return {
+      ...blogObj,
+      comments: serializedComments,
+    };
   } catch (err) {
     return null;
   }

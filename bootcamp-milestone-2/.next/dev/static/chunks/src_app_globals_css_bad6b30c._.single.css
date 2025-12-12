@@ -1,0 +1,27 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+:root {
+  --cg-black: #1e2020;
+  --cg-blue: #245eff;
+  --cg-grey: #f3f3f3;
+  --cg-white: #fff;
+}
+
+body {
+  color: #fff;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 30%, #1f2937 70%, #111827 100%) 0 0 / cover fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*# sourceMappingURL=src_app_globals_css_bad6b30c._.single.css.map*/

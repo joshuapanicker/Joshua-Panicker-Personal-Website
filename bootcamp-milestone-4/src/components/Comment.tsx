@@ -6,8 +6,8 @@ type CommentProps = {
   comment: IComment;
 };
 
-function parseCommentTime(time: Date): string {
-  const date = new Date(time);
+function parseCommentTime(time: Date | string): string {
+  const date = typeof time === 'string' ? new Date(time) : new Date(time);
   const months = [
     "January",
     "February",

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/globals.css"],"sourcesContent":[":root {\n  --cg-black: rgb(30, 32, 32);\n  --cg-blue: rgb(36, 94, 255);\n  --cg-grey: rgb(243, 243, 243);\n  --cg-white: rgb(255, 255, 255);\n}\n\nbody {\n  background: linear-gradient(\n    135deg,\n    #8b5cf6 0%,\n    #6366f1 30%,\n    #1f2937 70%,\n    #111827 100%\n  );\n  background-attachment: fixed;\n  background-size: cover;\n  min-height: 100vh;\n  margin: 0;\n  padding: 0;\n  color: white;\n}\n\nmain {\n  padding: 0;\n  margin: 0;\n  display: block;\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\n"],"names":[],"mappings":"AAAA;;;;;;;AAOA;;;;;;;;AAgBA;;;;;;AAMA"}}]
+}

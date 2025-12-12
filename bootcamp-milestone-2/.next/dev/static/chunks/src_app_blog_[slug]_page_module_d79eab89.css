@@ -1,0 +1,76 @@
+/* [project]/src/app/blog/[slug]/page.module.css [app-client] (css) */
+main {
+  animation: 1s ease-out page-module__dgei_G__slideUp;
+}
+
+@keyframes page-module__dgei_G__slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-module__dgei_G__blogPage {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.page-module__dgei_G__blogPageTitle {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.page-module__dgei_G__blogPageDate {
+  color: #a78bfa;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.page-module__dgei_G__blogPageImage {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 25px #0000004d;
+}
+
+.page-module__dgei_G__blogPageContent {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: #ffffff1a;
+  border: 1px solid #fff3;
+  border-radius: 12px;
+  padding: 2rem;
+  line-height: 1.8;
+}
+
+.page-module__dgei_G__blogPageContent h2 {
+  color: #fff;
+  margin: 2rem 0 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.page-module__dgei_G__blogPageContent p {
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/*# sourceMappingURL=src_app_blog_%5Bslug%5D_page_module_d79eab89.css.map*/
