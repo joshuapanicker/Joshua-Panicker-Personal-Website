@@ -1,0 +1,94 @@
+:global(main) {
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contactTitle {
+  color: white;
+  text-shadow: -1px -1px 0 #8b5cf6, 1px -1px 0 #8b5cf6, -1px 1px 0 #8b5cf6,
+    1px 1px 0 #8b5cf6, 0 0 3px #8b5cf6;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+:global(label) {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Georgia;
+  font-weight: bold;
+  color: white;
+}
+
+:global(input[type="text"]),
+:global(input[type="email"]),
+:global(textarea) {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+:global(input[type="submit"]) {
+  background-color: var(--cg-black);
+  color: var(--cg-white);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+:global(input[type="submit"]:hover) {
+  background-color: var(--cg-blue);
+}
+
+.contactForm {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.successMessage {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.errorMessage {
+  background-color: #f44336;
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+:global(input[type="submit"]:disabled) {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+:global(input[type="submit"]:disabled:hover) {
+  background-color: #ccc;
+}
+
