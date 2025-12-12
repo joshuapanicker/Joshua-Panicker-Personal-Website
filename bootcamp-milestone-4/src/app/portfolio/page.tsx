@@ -66,7 +66,7 @@ export default async function Portfolio() {
             <h2 className={styles.projectName}>{project.name}</h2>
             <p className={styles.projectDescription}>{project.description}</p>
             <div className={styles.techStack}>
-              {project.tech_stack.map((tech, techIndex) => (
+              {project.tech_stack.map((tech: string, techIndex: number) => (
                 <span key={techIndex} className={styles.techTag}>
                   {tech}
                 </span>
