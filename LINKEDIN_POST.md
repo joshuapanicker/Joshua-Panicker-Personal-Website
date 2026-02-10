@@ -46,7 +46,7 @@ Starting with static HTML and CSS, I progressively enhanced the website through 
 - Vercel deployment with automatic CI/CD
 
 **Live Website:** 
-🔗 https://joshuapanicker-bootcamp-project-2025.vercel.app
+🔗 https://joshuapanicker-bootcamp-project-202.vercel.app
 
 **What I Learned:**
 - Full-stack development with Next.js
@@ -63,21 +63,11 @@ This project demonstrates my ability to build scalable, maintainable web applica
 
 ---
 
-## Alternative Shorter Version:
+## Brief Version (Under 500 characters):
 
-🚀 **Just launched my personal website built with Next.js!**
+🚀 Built my personal website using Next.js 16, React 19, TypeScript, and MongoDB Atlas. Features dynamic blog posts with comment system, portfolio showcase, and interactive contact form with EmailJS. Full-stack application deployed on Vercel.
 
-Transformed my static HTML/CSS portfolio into a full-stack web application featuring:
-
-✅ Dynamic blog system with MongoDB
-✅ Interactive comment functionality
-✅ Contact form with EmailJS integration
-✅ Portfolio showcase with tech stack tags
-✅ Responsive design with modern UI/UX
-
-Built with: Next.js 16 • React 19 • TypeScript • MongoDB Atlas • EmailJS • Vercel
-
-Check it out: https://joshuapanicker-bootcamp-project-2025.vercel.app
+🔗 https://joshuapanicker-bootcamp-project-202.vercel.app
 
 #WebDevelopment #NextJS #React #MongoDB #FullStack #Portfolio
 

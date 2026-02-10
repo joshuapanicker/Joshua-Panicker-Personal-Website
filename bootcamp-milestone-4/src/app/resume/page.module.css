@@ -262,3 +262,50 @@
   transform: translateX(5px);
 }
 
+@media (max-width: 768px) {
+  .resumeTitle,
+  .titleHighlight {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .resumeSection {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .resumeTabs {
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+  }
+
+  .skillsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .resumeTitle,
+  .titleHighlight {
+    font-size: 1.4rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .resumeSection {
+    padding: 0.75rem;
+  }
+
+  .tabBtn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    min-width: 70px;
+  }
+}
+

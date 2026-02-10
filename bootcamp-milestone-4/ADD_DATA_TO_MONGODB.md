@@ -47,8 +47,8 @@
   "title": "What Brought Me to the Field of Computer Science",
   "slug": "what-brought-me-to-the-field-of-computer-science",
   "date": {"$date": "2025-10-13T00:00:00.000Z"},
-  "description": "I will discuss my computer science journey from the beginning, explaining what brought me here and why I continue to pursue this interest",
-  "content": "<p>This is my journey into computer science. I've always been fascinated by technology and how things work behind the scenes.</p><h2>Early Interest</h2><p>My interest in computer science started at a young age when I first discovered programming.</p><h2>College Journey</h2><p>As a first year computer science major at Cal Poly San Luis Obispo, I'm excited to continue learning and growing in this field.</p>",
+  "description": "From gaming and building my first PC to learning Python with my dad, dual enrollment in Java, C++, and Python, and now leading projects in Codebox and Hack4Impact—here’s how I found my path in computer science.",
+  "content": "<p>My interest in computer science started with gaming and tinkering. I was always into gaming, and I built my first PC with spare parts. My dad noticed my interest and taught me basic Python in middle school so we could build an asteroid collision game simulation together. I truly enjoyed that experience and wanted to pursue computer science more in high school.</p><h2>High School and Dual Enrollment</h2><p>I applied for AP Computer Science A in my junior year, but it was a lottery system and I didn’t get the course. I didn’t let that stop me—I took dual enrollment classes in Java, C++, and Python, all of which I found intriguing. That’s when I knew I had a real interest and decided to major in it.</p><h2>Projects and Teaching</h2><p>I started working on my own projects, like building a hangman game for my brother and a chess simulator, among others. I also discovered I liked to teach: I’ve taught young kids how to code in Python and even Scratch.</p><h2>College and Clubs</h2><p>Coming into college, I learned data structures and fundamental programming and computer science concepts. I joined clubs like Codebox and Hack4Impact, where I took on developer and tech lead roles and worked on long-term development projects that I was passionate about.</p>",
   "image": "/personalgithubpreview.PNG",
   "image_alt": "Preview image of personal github repositories",
   "comments": []
@@ -133,6 +133,22 @@ After adding all documents, you should see:
 1. Go back to your browser
 2. Visit http://localhost:3000/blog - You should now see your blogs!
 3. Visit http://localhost:3000/portfolio - You should now see your projects!
+
+## Updating an Existing Blog Post (e.g. "What Brought Me to the Field of Computer Science")
+
+If the post already exists in `blogs`, don’t insert again. In MongoDB Atlas: open the `blogs` collection → find the document with `"slug": "what-brought-me-to-the-field-of-computer-science"` → click **Edit** → replace the `description` and `content` fields with the new text from the JSON above → **Update**. Your site will then show the updated story.
+
+## Remove All Comments from Your Blogs
+
+To clear every comment from your two blog posts:
+
+1. In MongoDB Atlas, go to **Browse Collections** → open the **test** database → open the **blogs** collection.
+2. Click the **Edit** (pencil) icon on the **first** blog document.
+3. Find the **comments** field. Replace its value with an empty array: `[]`
+4. Click **Update**.
+5. Repeat for the **second** blog document (edit → set **comments** to `[]` → Update).
+
+After this, your blog pages will show no comments. New comments are only emailed to you for moderation and are not stored until you add an approval flow.
 
 ## Important Notes:
 

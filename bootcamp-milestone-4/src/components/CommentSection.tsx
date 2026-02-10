@@ -33,13 +33,14 @@ export default function CommentSection({ slug, comments: initialComments }: Comm
         body: JSON.stringify({ user, comment }),
       });
 
-      if (res.ok) {
-        const updatedComments = await res.json();
-        setComments(updatedComments);
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success) {
         setUser("");
         setComment("");
+        alert(data.message ?? "Thanks! Your comment has been submitted for moderation and will appear after review.");
       } else {
-        alert("Failed to add comment");
+        alert(data.error ?? "Failed to submit comment");
       }
     } catch (err) {
       alert("Error submitting comment");
@@ -90,7 +91,7 @@ export default function CommentSection({ slug, comments: initialComments }: Comm
 
       <div className={styles.commentsList}>
         {comments.length === 0 ? (
-          <p className={styles.noComments}>No comments yet. Be the first to comment!</p>
+          <p className={styles.noComments}>No comments yet. Comments are held for moderation—submit one and it will be emailed to the author for review.</p>
         ) : (
           comments.map((comment, index) => (
             <Comment key={index} comment={comment} />

@@ -70,3 +70,56 @@
   margin-bottom: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .blogPage {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .blogPageTitle {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .blogPageDate {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .blogPageImage {
+    height: 220px;
+    margin-bottom: 1.5rem;
+  }
+
+  .blogPageContent {
+    padding: 1.5rem;
+  }
+
+  .blogPageContent h2 {
+    font-size: 1.25rem;
+  }
+
+  .blogPageContent p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogPage {
+    padding: 0 0.75rem;
+    margin: 1rem auto;
+  }
+
+  .blogPageTitle {
+    font-size: 1.4rem;
+  }
+
+  .blogPageImage {
+    height: 180px;
+  }
+
+  .blogPageContent {
+    padding: 1rem;
+  }
+}
+

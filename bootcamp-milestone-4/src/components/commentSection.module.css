@@ -117,3 +117,25 @@
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .commentSection {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .commentTitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .commentSection {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .commentTitle {
+    font-size: 1.2rem;
+  }
+}
+

@@ -410,3 +410,128 @@
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
+
+/* Responsive: stack hero content and scale for small screens */
+@media (max-width: 768px) {
+  .heroContent {
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .heroText {
+    margin-right: 0;
+    order: 1;
+    width: 100%;
+  }
+
+  .heroCard {
+    margin-right: 0;
+    padding: 1.5rem;
+  }
+
+  .heroName {
+    font-size: 2.5rem;
+  }
+
+  .heroTitle {
+    font-size: 1.4rem;
+  }
+
+  .heroGreeting {
+    font-size: 1.25rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .heroImage {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imageContainer {
+    width: 280px;
+    height: 320px;
+  }
+
+  .scrollButtons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+
+  .scrollBtn {
+    min-width: 80px;
+  }
+
+  .connectCard {
+    margin: 1.5rem 1rem 3rem;
+    padding: 1.5rem;
+  }
+
+  .aboutSection {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .aboutCard {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .aboutLinks {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    margin-top: 1rem;
+    padding: 0.75rem;
+  }
+
+  .heroCard {
+    padding: 1rem;
+  }
+
+  .heroName {
+    font-size: 1.75rem;
+  }
+
+  .heroTitle {
+    font-size: 1.1rem;
+  }
+
+  .heroDescription {
+    font-size: 0.95rem;
+  }
+
+  .imageContainer {
+    width: 220px;
+    height: 260px;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}

@@ -189,3 +189,46 @@
   color: white;
 }
 
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 1rem;
+  }
+
+  .portfolioTitle {
+    font-size: 1.75rem;
+    margin: 1.5rem 0.5rem;
+  }
+
+  .portfolioContainer {
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .projectCard {
+    padding: 1.5rem;
+  }
+
+  .projectName {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolioTitle {
+    font-size: 1.4rem;
+  }
+
+  .portfolioContainer {
+    padding: 0.75rem;
+    gap: 1.5rem;
+  }
+
+  .projectCard {
+    padding: 1rem;
+  }
+
+  .projectImageContainer {
+    height: 160px;
+  }
+}
+

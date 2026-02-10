@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/database/db";
-import Blog from "@/database/blogSchema";
-import type { IComment } from "@/database/blogSchema";
+import emailjs from "@emailjs/nodejs";
 
 type IParams = {
   params: Promise<{
@@ -10,38 +8,58 @@ type IParams = {
 };
 
 export async function POST(req: NextRequest, { params }: IParams) {
-  await connectDB();
   const { slug } = await params;
 
   try {
     const body = await req.json();
     const { user, comment } = body;
 
-    if (!user || !comment) {
+    if (!user || !comment || typeof user !== "string" || typeof comment !== "string") {
       return NextResponse.json(
         { error: "User and comment are required" },
         { status: 400 }
       );
     }
 
-    const newComment: IComment = {
-      user,
-      comment,
-      time: new Date(),
-    };
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.EMAILJS_COMMENT_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-    const blog = await Blog.findOneAndUpdate(
-      { slug },
-      { $push: { comments: newComment } },
-      { new: true }
-    ).orFail();
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Comment email config missing:", {
+        serviceId: !!serviceId,
+        templateId: !!templateId,
+        publicKey: !!publicKey,
+      });
+      return NextResponse.json(
+        { error: "Comment notifications are not configured" },
+        { status: 500 }
+      );
+    }
 
-    return NextResponse.json(blog.comments);
+    await emailjs.send(
+      serviceId,
+      templateId,
+      {
+        from_name: user.trim(),
+        message: comment.trim(),
+        blog_slug: slug,
+      },
+      {
+        publicKey,
+        privateKey: process.env.EMAILJS_PRIVATE_KEY ?? undefined,
+      }
+    );
+
+    return NextResponse.json({
+      success: true,
+      message: "Comment submitted for moderation. It will not appear on the blog until approved.",
+    });
   } catch (err) {
+    console.error("Comment email error:", err);
     return NextResponse.json(
-      { error: "Failed to add comment" },
+      { error: "Failed to submit comment for moderation" },
       { status: 500 }
     );
   }
 }
-

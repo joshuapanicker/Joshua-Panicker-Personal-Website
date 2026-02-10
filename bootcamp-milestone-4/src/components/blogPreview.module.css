@@ -70,3 +70,35 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
+@media (max-width: 768px) {
+  .blogPost {
+    padding: 1.5rem;
+  }
+
+  .blogTitle {
+    font-size: 1.4rem;
+  }
+
+  .blogImage {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogPost {
+    padding: 1rem;
+  }
+
+  .blogTitle {
+    font-size: 1.2rem;
+  }
+
+  .blogImage {
+    height: 140px;
+  }
+
+  .blogDescription {
+    font-size: 0.9rem;
+  }
+}
+

@@ -59,7 +59,10 @@
 
 .contactForm {
   width: 500px;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .successMessage {
@@ -92,3 +95,24 @@
   background-color: #ccc;
 }
 
+@media (max-width: 768px) {
+  .contactTitle {
+    font-size: 1.5rem;
+    margin: 1.5rem 0.5rem;
+  }
+
+  .contactForm {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactTitle {
+    font-size: 1.25rem;
+  }
+
+  .contactForm {
+    padding: 0 0.75rem;
+  }
+}

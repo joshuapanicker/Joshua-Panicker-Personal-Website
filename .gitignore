@@ -3,3 +3,6 @@
 bootcamp-milestone-1
 node_modules/
 *.log
+.env
+.env.local
+.env*.local

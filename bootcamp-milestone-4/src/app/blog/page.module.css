@@ -32,3 +32,28 @@
   gap: 2rem;
 }
 
+@media (max-width: 768px) {
+  .blogTitle {
+    font-size: 1.75rem;
+    margin: 1.5rem 0.5rem;
+  }
+
+  .blogContainer {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogTitle {
+    font-size: 1.4rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .blogContainer {
+    padding: 0 0.75rem;
+    margin: 1rem auto;
+  }
+}
+
