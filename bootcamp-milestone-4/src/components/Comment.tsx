@@ -4,6 +4,7 @@ import styles from "./comment.module.css";
 
 type CommentProps = {
   comment: IComment;
+  variant?: "default" | "redesign";
 };
 
 function parseCommentTime(time: Date | string): string {
@@ -36,7 +37,20 @@ function parseCommentTime(time: Date | string): string {
   return `${month} ${day} ${year} ${hours}:${minutesStr}${ampm}`;
 }
 
-function Comment({ comment }: CommentProps) {
+function Comment({ comment, variant = "default" }: CommentProps) {
+  if (variant === "redesign") {
+    return (
+      <div className="p-5 bg-card/60 border border-border rounded-none border-l-4 border-l-primary">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <h4 className="text-base font-semibold text-primary">{comment.user}</h4>
+          <span className="text-xs font-mono text-gray-500">
+            {parseCommentTime(comment.time)}
+          </span>
+        </div>
+        <p className="text-sm text-gray-300 leading-relaxed">{comment.comment}</p>
+      </div>
+    );
+  }
   return (
     <div className={styles.comment}>
       <h4 className={styles.commentUser}>{comment.user}</h4>

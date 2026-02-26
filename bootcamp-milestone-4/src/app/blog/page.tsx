@@ -31,21 +31,25 @@ export default async function BlogPage() {
     <main>
       <h1 className={styles.blogTitle}>Joshua Panicker&apos;s blog</h1>
       <div className={styles.blogContainer}>
-        {blogs.map((blog) => (
-          <BlogPreview
-            key={blog.slug}
-            title={blog.title}
-            date={blog.date.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-            description={blog.description}
-            image={blog.image}
-            imageAlt={blog.image_alt}
-            slug={blog.slug}
-          />
-        ))}
+        {blogs.map((blog) => {
+          const heroPreview = "/portfolio-hero-preview.png";
+          const image = blog.slug === "my-portfolio-building-journey" ? heroPreview : blog.image;
+          return (
+            <BlogPreview
+              key={blog.slug}
+              title={blog.title}
+              date={blog.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+              description={blog.description}
+              image={image}
+              imageAlt={blog.image_alt}
+              slug={blog.slug}
+            />
+          );
+        })}
       </div>
     </main>
   );

@@ -4,13 +4,17 @@ import React, { useState } from "react";
 import type { IComment } from "@/database/blogSchema";
 import Comment from "./Comment";
 import styles from "./commentSection.module.css";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 interface CommentSectionProps {
   slug: string;
   comments: IComment[];
+  variant?: "default" | "redesign";
 }
 
-export default function CommentSection({ slug, comments: initialComments }: CommentSectionProps) {
+export default function CommentSection({ slug, comments: initialComments, variant = "default" }: CommentSectionProps) {
   const [comments, setComments] = useState<IComment[]>(initialComments);
   const [user, setUser] = useState("");
   const [comment, setComment] = useState("");
@@ -49,10 +53,69 @@ export default function CommentSection({ slug, comments: initialComments }: Comm
     }
   };
 
+  if (variant === "redesign") {
+    return (
+      <div className="space-y-8">
+        <h2 className="text-2xl font-sans font-black text-foreground tracking-[-0.01em]">
+          Comments
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="user" className="block text-sm font-normal text-gray-300 mb-2">
+              Name
+            </label>
+            <Input
+              id="user"
+              type="text"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+              placeholder="Your name"
+              className="bg-background border-border text-foreground focus:border-primary"
+              required
+              disabled={isSubmitting}
+            />
+          </div>
+          <div>
+            <label htmlFor="comment" className="block text-sm font-normal text-gray-300 mb-2">
+              Comment
+            </label>
+            <Textarea
+              id="comment"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              placeholder="Your comment..."
+              rows={4}
+              className="bg-background border-border text-foreground focus:border-primary resize-none"
+              required
+              disabled={isSubmitting}
+            />
+          </div>
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
+          >
+            {isSubmitting ? "Submitting..." : "Submit Comment"}
+          </Button>
+        </form>
+        <div className="space-y-4 pt-6 border-t border-border">
+          {comments.length === 0 ? (
+            <p className="text-sm text-gray-500 italic text-center py-8">
+              No comments yet. Comments are held for moderation—submit one and it will be emailed to the author for review.
+            </p>
+          ) : (
+            comments.map((c, index) => (
+              <Comment key={index} comment={c} variant="redesign" />
+            ))
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.commentSection}>
       <h2 className={styles.commentTitle}>Comments</h2>
-      
       <form onSubmit={handleSubmit} className={styles.commentForm}>
         <div className={styles.formGroup}>
           <label htmlFor="user" className={styles.label}>
@@ -88,7 +151,6 @@ export default function CommentSection({ slug, comments: initialComments }: Comm
           {isSubmitting ? "Submitting..." : "Submit Comment"}
         </button>
       </form>
-
       <div className={styles.commentsList}>
         {comments.length === 0 ? (
           <p className={styles.noComments}>No comments yet. Comments are held for moderation—submit one and it will be emailed to the author for review.</p>

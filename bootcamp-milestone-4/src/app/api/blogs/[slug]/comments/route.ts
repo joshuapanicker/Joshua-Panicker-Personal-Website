@@ -56,9 +56,16 @@ export async function POST(req: NextRequest, { params }: IParams) {
       message: "Comment submitted for moderation. It will not appear on the blog until approved.",
     });
   } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    const status = err && typeof err === "object" && "status" in err ? (err as { status: number }).status : 403;
     console.error("Comment email error:", err);
+    // In development, surface EmailJS error so you can fix config (e.g. enable API in EmailJS Security, add private key)
+    const safeMessage =
+      process.env.NODE_ENV === "development"
+        ? `Failed to submit comment: ${message}`
+        : "Failed to submit comment for moderation";
     return NextResponse.json(
-      { error: "Failed to submit comment for moderation" },
+      { error: safeMessage },
       { status: 500 }
     );
   }

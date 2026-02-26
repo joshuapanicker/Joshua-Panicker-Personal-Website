@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 258 28% 8%;
+    --foreground: 0 0% 95%;
+    --card: 258 22% 11%;
+    --card-foreground: 0 0% 95%;
+    --popover: 258 28% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 335 85% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 38 95% 55%;
+    --secondary-foreground: 0 0% 8%;
+    --tertiary: 350 80% 55%;
+    --tertiary-foreground: 0 0% 100%;
+    --muted: 258 18% 14%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 38 95% 55%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 258 16% 18%;
+    --input: 258 16% 14%;
+    --ring: 335 85% 58%;
+    --radius: 2px;
+    --success: 145 55% 45%;
+    --warning: 38 95% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.018em;
+    line-height: 1.6;
+    background-image:
+      linear-gradient(rgba(180, 140, 255, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(180, 140, 255, 0.022) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+}
+
+@layer utilities {
+  .futuristic-card {
+    position: relative;
+  }
+
+  .futuristic-card::before,
+  .futuristic-card::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: hsl(335, 85%, 58%);
+    border-style: solid;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .futuristic-card::before {
+    top: -1px;
+    left: -1px;
+    border-width: 1px 0 0 1px;
+  }
+
+  .futuristic-card::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 1px 1px 0;
+  }
+
+  .futuristic-card:hover::before,
+  .futuristic-card:hover::after {
+    opacity: 1;
+  }
+}
+
+/* ===== INTERACTIVE ANIMATIONS ===== */
+
+@media (pointer: fine) {
+  * { cursor: none !important; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(236, 72, 153, 0.35), 0 0 16px rgba(236, 72, 153, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(236, 72, 153, 0.7), 0 0 44px rgba(236, 72, 153, 0.25);
+  }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 200% 100%;
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Noise film grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.018;
+  pointer-events: none;
+  z-index: 9997;
+}
+
+.glow-primary {
+  filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.6));
+}
+
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, hsl(335, 85%, 58%), hsl(38, 95%, 55%), hsl(335, 85%, 58%));
+  background-size: 200%;
+  animation: gradient-x 3s linear infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+@keyframes reveal-up {
+  from { clip-path: inset(100% 0 0 0); transform: translateY(20px); opacity: 0; }
+  to   { clip-path: inset(0% 0 0 0);   transform: translateY(0);    opacity: 1; }
+}
+.reveal-up {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
