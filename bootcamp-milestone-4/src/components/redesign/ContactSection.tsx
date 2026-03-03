@@ -25,8 +25,8 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/joshuapanicker",
-    href: "https://linkedin.com/in/joshuapanicker",
+    value: "linkedin.com/in/joshua-panicker-32610a2b0",
+    href: "https://www.linkedin.com/in/joshua-panicker-32610a2b0/",
   },
   {
     icon: Github,
