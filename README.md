@@ -2,7 +2,7 @@
 
 A personal portfolio website built progressively across 4 milestones as part of the Hack4Impact Cal Poly 2025 bootcamp. The project evolves from a static HTML/CSS site into a full-stack Next.js application with a database, animations, and third-party integrations.
 
-Live site: https://joshuapanicker-bootcamp-project-202.vercel.app
+Live site: [https://joshuapanicker-bootcamp-project-202.vercel.app](https://joshuapanicker-personal-portfolio-website.vercel.app/)
 
 ---
 
