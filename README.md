@@ -4,6 +4,9 @@ A personal portfolio website built progressively across 4 milestones as part of 
 
 Live site: [https://joshuapanicker-bootcamp-project-202.vercel.app](https://joshuapanicker-personal-portfolio-website.vercel.app/)
 
+<img width="3420" height="1964" alt="image" src="https://github.com/user-attachments/assets/eae71141-bbc5-49cd-ad96-8bd84d857394" />
+
+
 ---
 
 ## Project Design & Architecture
