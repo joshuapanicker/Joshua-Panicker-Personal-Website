@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Joshua Panicker — Personal Portfolio (Milestone 4)
+
+A full-stack personal portfolio built with Next.js 15, Tailwind CSS, and MongoDB. Features a redesigned UI with smooth animations, a blog with comments, a projects showcase, and a contact form powered by EmailJS.
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS, Framer Motion
+- **Database:** MongoDB + Mongoose
+- **Email:** EmailJS
+- **UI Components:** Radix UI, shadcn/ui
+- **Language:** TypeScript
+
+## Pages
+
+- `/` — Home (Hero, About, Projects, Resume, Blog, Contact)
+- `/blog` — Blog listing
+- `/blog/[slug]` — Individual blog post with comments
+- `/portfolio` — Projects showcase
+- `/resume` — Resume viewer
+- `/contact` — Contact form
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Copy the example env file and fill in your values:
+   ```bash
+   cp .env.local.example .env.local
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Run the dev server:
+   ```bash
+   npm run dev
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) to view it.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment Variables
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `.env.local.example` for the required variables (MongoDB URI, EmailJS keys, etc.).
