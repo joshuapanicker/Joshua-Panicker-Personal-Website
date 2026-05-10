@@ -23,11 +23,42 @@ type ProjectDoc = {
 async function getProjects(): Promise<
   { _id?: string; name: string; description: string; image: string; image_alt?: string; tech_stack: string[]; link?: string }[]
 > {
+  const stockWizProject = {
+    _id: "stockwiz",
+    name: "StockWiz",
+    description:
+      "AI-powered stock screening and portfolio management dashboard. Combines live Yahoo Finance market data with Claude AI to automate stock analysis and portfolio decisions. A Python/FastAPI backend exposes REST and SSE streaming endpoints and runs a custom criteria engine that evaluates configurable buy/watch/sell rules against real-time fundamentals — PE ratios, revenue growth, profit margins, 52-week positioning, and market trend. Claude is wired into the pipeline to return structured reasoning streamed token-by-token to a React + TypeScript frontend with TradingView lightweight-charts and Recharts visualizations. Features include an interactive stock screener, candlestick and depth-of-market charts, a per-stock AI assistant with 90-day price predictions, a general market assistant chatbot, and a portfolio tracker with P&L, allocation charts, and AI-driven sell signals.",
+    image: "/stockwizpreview.png",
+    image_alt: "StockWiz dashboard preview",
+    tech_stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "FastAPI",
+      "Python",
+      "Claude AI",
+      "yfinance",
+      "TradingView",
+      "Recharts",
+    ],
+    link: "#",
+  };
+
   try {
     await connectDB();
     const projects = (await Project.find().lean()) as unknown as ProjectDoc[];
     const HERO_PREVIEW = "/portfolio-hero-preview.png";
-    return projects.map((p) => {
+    const filteredProjects = projects.filter((p) => {
+      const name = p.name.toLowerCase();
+      const link = (p.link ?? "").toLowerCase();
+      return (
+        !name.includes("virtual tour") &&
+        !name.includes("scu tour") &&
+        !link.includes("scutours.com")
+      );
+    });
+    const dbProjects = filteredProjects.map((p) => {
       const isPersonalWebsite = p.name.toLowerCase().includes("personal website");
       return {
         _id: p._id?.toString(),
@@ -39,9 +70,10 @@ async function getProjects(): Promise<
         link: p.link ?? "#",
       };
     });
+    return [stockWizProject, ...dbProjects];
   } catch (err) {
     console.error("Error fetching projects:", err);
-    return [];
+    return [stockWizProject];
   }
 }
 
