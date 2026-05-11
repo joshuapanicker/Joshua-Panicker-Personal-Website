@@ -69,7 +69,6 @@ async function getProjects(): Promise<
   try {
     await connectDB();
     const projects = (await Project.find().lean()) as unknown as ProjectDoc[];
-    const HERO_PREVIEW = "/portfolio-hero-preview.png";
     const filteredProjects = projects.filter((p) => {
       const name = p.name.toLowerCase();
       const link = (p.link ?? "").toLowerCase();
@@ -77,17 +76,16 @@ async function getProjects(): Promise<
         !name.includes("virtual tour") &&
         !name.includes("scu tour") &&
         !link.includes("scutours.com") &&
-        !name.includes("uber ally") &&
-        !name.includes("uberally")
+        !name.includes("uber") &&
+        !name.includes("personal website")
       );
     });
     const dbProjects = filteredProjects.map((p) => {
-      const isPersonalWebsite = p.name.toLowerCase().includes("personal website");
       return {
         _id: p._id?.toString(),
         name: p.name,
         description: p.description,
-        image: isPersonalWebsite ? HERO_PREVIEW : p.image,
+        image: p.image,
         image_alt: p.image_alt,
         tech_stack: p.tech_stack,
         link: p.link ?? "#",
