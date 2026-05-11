@@ -42,7 +42,28 @@ async function getProjects(): Promise<
       "TradingView",
       "Recharts",
     ],
-    link: "#",
+    link: "https://github.com/joshuapanicker/Stockwiz-AI-Stock-Dashboard",
+  };
+
+  const polyPagesProject = {
+    _id: "polypages",
+    name: "PolyPages",
+    description:
+      "A Cal Poly-only, credit-based marketplace where students anonymously upload and download lecture notes, study guides, and class overviews. Built as a single Next.js 16 + React 19 app on Supabase (Postgres, Auth, Storage), with ~27 versioned migrations, row-level security on every table, and SECURITY DEFINER RPCs for credit grants, vote-to-credit triggers, and course note counts. PDFs are stored behind short-TTL signed URLs, OCR'd with tesseract.js for keyword search, and gated by a closed-loop credit economy — earn credits on approved uploads, spend them on downloads. Identity is Kahoot-style anonymous nicknames backed by email OTP with a calpoly.edu allowlist. Deployed at polypages.dev.",
+    image: "/polypagesimg.png",
+    image_alt: "PolyPages homepage preview",
+    tech_stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "tesseract.js",
+      "pdf2pic",
+      "Vercel",
+    ],
+    link: "https://polypages.dev",
   };
 
   try {
@@ -55,7 +76,9 @@ async function getProjects(): Promise<
       return (
         !name.includes("virtual tour") &&
         !name.includes("scu tour") &&
-        !link.includes("scutours.com")
+        !link.includes("scutours.com") &&
+        !name.includes("uber ally") &&
+        !name.includes("uberally")
       );
     });
     const dbProjects = filteredProjects.map((p) => {
@@ -70,10 +93,10 @@ async function getProjects(): Promise<
         link: p.link ?? "#",
       };
     });
-    return [stockWizProject, ...dbProjects];
+    return [polyPagesProject, stockWizProject, ...dbProjects];
   } catch (err) {
     console.error("Error fetching projects:", err);
-    return [stockWizProject];
+    return [polyPagesProject, stockWizProject];
   }
 }
 
